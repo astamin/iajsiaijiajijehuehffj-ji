@@ -7,13 +7,14 @@ try :
     import telebot
     from telebot import types
     import random
+    import pip
 except ImportError :
     import os
     os.system('pip install httpx requests ')
-    os.system('pip install telebot  ')
-os.system('pip install telebot  ')
-token = '6482242825:AAFz_b-9lquOGgenq33XDtK49PBYfkeIZs4'
-bot = telebot.TeleBot(token='6482242825:AAFz_b-9lquOGgenq33XDtK49PBYfkeIZs4' )
+    os.system('pip install pyTelegramBotAPI  ')
+token = input('enter ur bot token : ')
+
+bot = telebot.TeleBot(token=token)
 owner = ['6640183279' , '6037113802' ,'5489872238']
 def sendwebhook(claimuser , att , finish , begining) :
     webhookurl = 'https://discord.com/api/webhooks/1163888841627811870/PyQVDWZQfIdg_SzFIOVJYhEYN6JTJZ4sYzdz7xo0LGJRIrfEqX9PjvWrjWiEdSxvk4OZ'
