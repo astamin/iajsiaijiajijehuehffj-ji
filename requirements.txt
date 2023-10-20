@@ -4,7 +4,8 @@ aiohttp==3.8.6
 aiosignal==1.3.1
 anyio==4.0.0
 async-timeout==4.0.3
-attrs==19.1.0
+attrs==17.3.0
+attrs==19.2.0
 beautifulsoup4==4.12.2
 better-instagram==0.0.1
 blinker==1.6.3
