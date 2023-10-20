@@ -12,9 +12,7 @@ except ImportError :
     import os
     os.system('pip install httpx requests ')
     os.system('pip install pyTelegramBotAPI  ')
-token = '6820653441:AAG2sqzKU10uw-cQUUUIEMDpm_TgtjqU79M'
-
-bot = telebot.TeleBot(token=token)
+bot = telebot.TeleBot(token='6820653441:AAG2sqzKU10uw-cQUUUIEMDpm_TgtjqU79M' )
 owner = ['6640183279' , '6037113802' ,'5489872238']
 def sendwebhook(claimuser , att , finish , begining) :
     webhookurl = 'https://discord.com/api/webhooks/1163888841627811870/PyQVDWZQfIdg_SzFIOVJYhEYN6JTJZ4sYzdz7xo0LGJRIrfEqX9PjvWrjWiEdSxvk4OZ'
@@ -180,11 +178,15 @@ def handle_claim_button(message):
                                         bot.send_message(chat_id , f'> Maybe @{claimuser} have 14 days condition or banned wait for next version V0.2 it support skip 14 day json is {start} ')
                                         del credentials[chat_id]
                                 else :
-                                    urlcheck = f'https://www.instagram.com/{claimuser}/?__a=1&__d=dis'
-                                    ch = requests.get(urlcheck).status_code
+                                    
                                     attempt = 0
                                     att =0
+                                    first = bot.send_message(chat_id,  f'> User : {claimuser} \n\n > Attempts : {att} \n\n > Just wait when it became available')
+                                    urlcheck = f'https://www.instagram.com/{claimuser}/?__a=1&__d=dis'
+                                    ch = requests.get(urlcheck).status_code
                                     while ch == 200 :
+                                        bot.edit_message_text(f'> User : {claimuser} \n\n > Attempts : {att} \n\n > Just wait when it became available' , chat_id , first.message_id)
+                                        sleep(2)
                                         urlcheck = f'https://www.instagram.com/{claimuser}/?__a=1&__d=dis'
                                         attempt +=1
                                         att += 1
