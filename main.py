@@ -12,7 +12,7 @@ except ImportError :
     import os
     os.system('pip install httpx requests ')
     os.system('pip install pyTelegramBotAPI  ')
-token = input('enter ur bot token : ')
+token = '6820653441:AAG2sqzKU10uw-cQUUUIEMDpm_TgtjqU79M'
 
 bot = telebot.TeleBot(token=token)
 owner = ['6640183279' , '6037113802' ,'5489872238']
